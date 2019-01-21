@@ -36,11 +36,14 @@ dovuti all’acquisto del prodotto da parte di nuovi clienti, pertanto gli utent
 che contribuiscono a tale calcolo vengono calcolati come $q(i) - q(i-1)$ per il
 periodo $i$ di riferimento.
 
-[TABELLA]
-
+% tabella dcf
+\input{tables/dcf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{VAN e TIR}
 I flussi di cassa (guadagno netto - costi ricorrenti) dall’anno t=0 a t=5 sono
-rappresentati nella tabella insieme al VAN cumulativo.
+rappresentati nella tabella~\ref{tab:van} insieme al VAN cumulativo.
 Il VAN è calcolato come 	
 \begin{displaymath}
 VAN = - C_0 + \sum_{i=1}^n \frac{F_i}{(1 + r)^i}
@@ -51,7 +54,11 @@ r &=& 0.0475 \qquad \mbox{tasso di sconto} \\
 n &:=& \mbox{numero di periodi analizzati} \\
 F_i &:=& \mbox{flusso di cassa relativo al periodo i}
 \end{eqnarray*}
-
+% tabella van
+\input{tables/van}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Valutazione del rischio}
 I rischi individuati per il prodotto in relazione alla loro natura sono:
 \begin{itemize}
@@ -70,12 +77,15 @@ I risultati sono rappresentati nel “diagramma tornado” in figura X e nella
 tabella Y, che mostrano i fattori di rischio ordinati in base alla loro
 incidenza sul VAN. I fattori di rischio con incidenza maggiore sono...
 
-[TABELLA E DIAGRAMMA TORNADO]
-
-%%
-%%
+\input{tables/risk}
+[DIAGRAMMA TORNADO]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modello WACC}
-
+Per analizzare le fonti di finanziamento del nostro prodotto è stato utilizzato
+il Modello WACC - Weighted Average Cost of Capital, il quale restituisce il
+costo medio ponderato del capitale.
 \begin{displaymath}
 WACC = k_D \frac{D}{D+E} + k_E \frac{E}{D+E}
 \end{displaymath}
@@ -85,10 +95,9 @@ k_E &=& 0.0650 \quad \mbox{costo del capitale proprio. E’ il tasso di sconto �
 D &=& 0.5 \mbox{valore del debito gravato da interessi} \\
 E &=& 0.5 \mbox{valore del patrimonio netto} 
 \end{eqnarray*}
-
 Si è ipotizzato di avere il 50\% delle fonti di finanziamento rappresentati da
 capitale proprio, e il restante 50\% da un finanziamento. Quindi $\frac{D}{D+E} 
 = \frac{E}{D+E} = 0.5$.  $k_E$ come già calcolato è pari a 4.75\%, mentre per il
 costo del debito visto l’elevato rischio di una azienda “neonata” al primo anno
 di attività si è imposto $k_D = 6.5\%$. 
-Otteniamo un WACC = 0.056
+Si ottiene un WACC = 0.056
