@@ -1,5 +1,5 @@
 \section{Analisi degli investimenti}
-\subsection{Tasso di sconto} 
+\subsection{Tasso di sconto}
 Il tasso di sconto è stato calcolato utilizzando il modello CAPM - Capital Asset
 Pricing Model, secondo cui il tasso di sconto è definito come
 \begin{displaymath}
@@ -12,37 +12,58 @@ r_m &=& 0.0452 \qquad \mbox{tasso di rendimento medio del mercato}
 \end{eqnarray*}
 
 Da un’analisi del mercato italiano tecnologico abbiamo trovato come valori
-$\beta=1,24$ e $r_m=4.52\%$. Come titolo risk-free è stato scelto il BTP, il cui
-tasso di rendimento a 5 anni è $r_f=3.57\%$ (data di riferimento: 15/01/2019).\\
+$\beta=1,24$ e $r_m=4.52\%$. Come titolo risk-free è stato scelto il BTP
+(\ref{finmer}), il cui tasso di rendimento a 5 anni è $r_f=3.57\%$ (data di
+riferimento: 15/01/2019).\\ 
 Il valore ottenuto è $r = 4.75\%$\\
 Con tale tasso di sconto è possibile determinare dai flussi di cassa gli indici
 VAN e TIR.
-
-\url{https://finanza-mercati.ilsole24ore.com/azioni/indici/indici-italia-settoriali/main.php}
-
+%
+%
 \subsection{Stima della domanda}
 Si ipotizzata una domanda con crescita secondo una curva logistica del tipo: 
 \begin{displaymath}
 q(i) = \frac{1}{1 + \beta_1 e^{-i\beta_2}}
 \end{displaymath}
-Il numero di utenti potenziali è u=50,236 (fonte).
-Avendo ipotizzato una crescita con curva logistica, poniamo $q(1)=1\%$ e
-$q5=5\%$.
 
-ARPU = ricavi medi per unità =
+Il numero di utenti potenziali è stato fissato ad $U=50.236$ (\ref{miele}).
+Avendo ipotizzato una crescita con curva logistica, poniamo $q(1)=0.01$ e
+$q(5)=0.05$ come proporzione di utenti interessati alla domanda nel periodo
+interessato dalla nostra analisi.  
+
+Si è ipotizzato ipotizzato inoltre che i clienti dispongano di una struttura che
+racchiude il loro allevamento di api o che, in previsione dell’acquisto del
+nostro prodotto, procedano con l’installazione di una struttura del genere. In
+questo modo ogni cliente può acquistare un singolo prodotto da applicare
+all’ingresso dell’allevamento evitando di acquistarne uno per ogni arnia.
+
+Il numero di clienti che otteniamo anno per anno dalla domanda non è di tipo
+cumulativo, questo perché un cliente che ha acquistato il prodotto non
+è soggetto ad ulteriori spese negli anni successivi. Alla domanda di ogni periodo di
+riferimento si è quindi sottratto i valori della domanda relativa ai periodi
+precedenti, ottenendo il numero dei soli nuovi clienti interessati.
 
 In un periodo di riferimento i flussi di cassa sono determinati dai ricavi
-dovuti all’acquisto del prodotto da parte di nuovi clienti, pertanto gli utenti
-che contribuiscono a tale calcolo vengono calcolati come $q(i) - q(i-1)$ per il
-periodo $i$ di riferimento.
+dovuti all’acquisto del prodotto da parte di nuovi clienti, pertanto la
+proporzione di utenti che contribuiscono a tale calcolo viene calcolata come
+$q(i) - q(i-1)$ per il periodo $i$ di riferimento. Questo spiega il calo di
+domanda che c’è tra gli anni $t=1$ e $t=2$.
 
 % tabella dcf
 \input{tables/dcf}
+%
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures/cf}
+\caption{Flussi di cassa scontati relativi primi 5 anni di attività}
+\label{cf}
+\end{figure}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{VAN e TIR}
-I flussi di cassa (guadagno netto - costi ricorrenti) dall’anno t=0 a t=5 sono
+I flussi di cassa (guadagno netto - costi ricorrenti) dall’anno $t=0$ a $t=5$ sono
 rappresentati nella tabella~\ref{tab:van} insieme al VAN cumulativo.
 Il VAN è calcolato come 	
 \begin{displaymath}
@@ -56,16 +77,47 @@ F_i &:=& \mbox{flusso di cassa relativo al periodo i}
 \end{eqnarray*}
 % tabella van
 \input{tables/van}
+%
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures/van}
+\caption{Andamento del VAN nei primi 5 anni di attività}
+\label{van}
+\end{figure}
+%
+Il periodo di pareggio finanziario (“payback period”) è dunque raggiunto tra il
+quarto ed il quinto anno. Essendo un indice che può essere interpretato come
+grado di rischio associato al progetto, ci si può ritenere soddisfatti di poter
+mostrare che entro il quinto anno di esercizio la nostra azienda può raggiungere
+il pareggio e ottenere un VAN positivo. L'andamento del VAN durante i primi 5
+anni è mostrato in figura~\ref{van}.
+
+Il TIR è il tasso di attualizzazione per cui il VAN del progetto è pari a zero, 
+ed è usato per misurare la redditività di progetti e investimenti.
+Studiando il valore del VAN al variare del tasso di sconto, e riducendo
+l’intervallo ricercando di volta in volta il valore del VAN nel punto medio,
+si è giunti all’intervallo \mbox{$[8.50, 8.51]$}. Il valore del VAN agli estremi è
+$VAN(r = 8.50) = 651.29 \mbox{\euro}$ e $VAN(r=8.51) = -139.68 \mbox{\euro}$,
+dunque scegliendo il punto intermedio si ottiene $TIR = 8.505\%$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Valutazione del rischio}
 I rischi individuati per il prodotto in relazione alla loro natura sono:
 \begin{itemize}
-\item [rischi puri:] incendi, terremoti, guasti nelle attrezzature, ...
-\item [rischi speculativi:] oscillazione dei tassi di cambio, innovazioni
-tecnologiche (utilizzo di droni), ...
+\item Rischi puri: incendi, terremoti, guasti nelle attrezzature;
+\item Rischi speculativi: oscillazione dei tassi di cambio, innovazioni
+tecnologiche (per esempio rappresentate dall’utilizzo di droni), variazioni nel
+costo dell’hardware, variazione di costi operativi.
 \end{itemize}
+
+Sono stati valutati una serie di rischi significativi, analizzando singolarmente
+l’incidenza sull’andamento del VAN. Non abbiamo tenuto conto del rischio di
+incendi in quanto molto basso in percentuale nel nostro caso, visto che la
+probabilità di incendio viene calcolata in base diretta al numero di dipendenti,
+la grandezza dell’immobile e la quantità di materiale infiammabile. Il rischio
+per terremoti non è stato considerato in quanto, ipotizzando di avere la nostra
+società a Roma, siamo in un’area con bassa probabilità di attività sismica.
 
 Per osservare l’incidenza di ogni fattore di rischio si fissata una
 percentuale di variazione dei parametri associati pari al 10\%. Si è quindi
@@ -73,12 +125,22 @@ calcolato il VAN sia nel caso in cui tale variazione sia positiva che negativa,
 e si è determinata la sua variazione percentuale rispetto al VAN ottenuto nel
 caso “reale”.
 
-I risultati sono rappresentati nel “diagramma tornado” in figura X e nella
-tabella Y, che mostrano i fattori di rischio ordinati in base alla loro
-incidenza sul VAN. I fattori di rischio con incidenza maggiore sono...
-
+I risultati sono rappresentati nel “diagramma tornado” in figura~\ref{tornado} e
+nella tabella~\ref{tab:risk}, che mostrano i fattori di rischio ordinati in base
+alla loro incidenza sul VAN.
 \input{tables/risk}
-[DIAGRAMMA TORNADO]
+%
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures/tornado}
+\caption{Diagramma tornado associato ai rischi}
+\label{tornado}
+\end{figure}
+%
+Il fattore di rischio con incidenza maggiore è rappresentato dal “fattore
+di markup”. La “domanda” e il “costo dell’hardware” hanno un’incidenza media,
+mentre i “costi relativi all’affitto” e il “tasso di sconto” hanno un’incidenza
+minore.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,12 +154,15 @@ WACC = k_D \frac{D}{D+E} + k_E \frac{E}{D+E}
 \begin{eqnarray*}
 k_D &=& 0.0475 \quad \mbox{costo del debito al netto della fiscalità} \\
 k_E &=& 0.0650 \quad \mbox{costo del capitale proprio. E’ il tasso di sconto “r”} \\
-D &=& 0.5 \mbox{valore del debito gravato da interessi} \\
-E &=& 0.5 \mbox{valore del patrimonio netto} 
+D &=& 0.5 \quad \mbox{valore del debito gravato da interessi} \\
+E &=& 0.5 \quad \mbox{valore del patrimonio netto} 
 \end{eqnarray*}
 Si è ipotizzato di avere il 50\% delle fonti di finanziamento rappresentati da
 capitale proprio, e il restante 50\% da un finanziamento. Quindi $\frac{D}{D+E} 
 = \frac{E}{D+E} = 0.5$.  $k_E$ come già calcolato è pari a 4.75\%, mentre per il
 costo del debito visto l’elevato rischio di una azienda “neonata” al primo anno
 di attività si è imposto $k_D = 6.5\%$. 
-Si ottiene un WACC = 0.056
+
+Si ottiene un WACC = 0.056 e dal confronto con il TIR si può valutare se è
+conveniente investire o meno nel nostro progetto. Poiché $TIR = 0.08505 > 0.056$
+si può concludere che è conveniente.
