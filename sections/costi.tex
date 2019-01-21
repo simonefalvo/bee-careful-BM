@@ -1,1 +1,200 @@
 \section{Analisi dei costi}
+L'analisi dei costi è stata effettuata impiegando un metodo di stima analitico,
+poiché, essendo una proposta innovativa, non è stato possibile reperire dati
+storici riguardanti i costi di progetti simili.
+%
+%
+\subsection{Composizione del prodotto}
+\subsubsection{Componenti hardware}
+\begin{itemize}
+\item \textbf{1 Arduino}: scheda elettronica dotata di microcontrollore per
+attuare la logica di controllo dell’intero sistema
+\item \textbf{4 Microcamere}: consentono la scansione delle immagini per il
+riconoscimento delle api che ospitano il parassita
+\item \textbf{2 Fotoresistori}: permettono di tenere il conto delle api passate
+sotto la microcamera, poiché questa non vede quelle senza varroa.
+\item \textbf{1 Servomotore}: permette di indirizzare le api nell’arnia o nel
+condotto di trattamento.
+\item \textbf{1 Resistenza a cartuccia}: consente la sublimazione dell’acido
+ossalico, è a base di nichel cromo, resistente all’ossidazione ed alla
+corrosione.
+\item \textbf{1 Sensore di temperatura}: consente il controllo della temperatura
+del resistore
+\item \textbf{1 Amplificatore di corrente}: fornisce la corrente di servizio
+necessaria ai componenti elettrici
+\item \textbf{1 Colorante gulal}: le api trattate vengono marcate in modo da non
+venire ritrattate a breve termine
+\item \textbf{1 Box contenitore}: struttura che contiene il prodotto
+\end{itemize}
+%
+\subsubsection{Componenti software}
+\begin{itemize}
+\item \textbf{Programma di controllo}: Programma che pilota i dispositivi
+hardware e descrive la logica di acquisizione dati, elaborazione ed attuazione
+\end{itemize}
+%
+%
+\subsection{Fasi di sviluppo del progetto}
+\begin{enumerate}
+\item Realizzazione del software\footnote{Operazione Una Tantum}
+\item Inserimento in sede\footnote{Operazione Una Tantum}
+\item Acquisto materie prime
+\item Assemblaggio materie prime e caricamento del software
+\item Vendita e spedizione del prodotto
+\item Assistenza
+\end{enumerate}
+%
+%
+\subsection{Stima delle risorse e dei costi}
+Le risorse necessarie alla realizzazione del progetto vengono classificate e
+quantificate  seguendo una ripartizione tale da individuare costi fissi e
+variabili.  
+%
+\subsubsection{Costi fissi}
+I costi fissi sono tutti quei costi che non variano a seconda della domanda.
+
+I costi sono stati classificati in “diretti” e “indiretti”. I costi diretti
+riguardano le risorse umane o materiali necessarie esclusivamente alla
+realizzazione del prodotto (materie prime, manodopera diretta, acquisto di beni
+e servizi da terzi). I costi indiretti sono legati a manutenzione, ammortamenti,
+energia e costi generali.\\
+%
+Sono stati individuati i seguenti costi fissi diretti:
+\begin{itemize}
+\item \textbf{Programmatori (\EUR{3200})}: risorse umane necessarie alla
+realizzazione del software.  Le funzionalità del software riguardano
+principalmente acquisizione dei dati, l’elaborazione, ed il controllo dei
+dispositivi connessi alla scheda Arduino.  Per quanto riguarda l’acquisizione
+dei dati tramite riconoscimento immagini, è già disponibile una libreria
+software open source (OpenCV~\cite{opencv}) integrabile con la scheda, pertanto
+si può considerare soltanto il costo di adattamento della libreria. Anche per
+quanto riguarda le funzioni di controllo e attuazione, vi è un elevato grado di
+supporto in casa Arduino, pertanto si stima un tempo necessario per
+l’implementazione ed il test dell’ordine delle settimane, non più di 4, pari a
+160 ore di lavoro. Si può concludere che il costo totale sia al più di
+\EUR{3200} per un impiego su commissione, supponendo che un programmatore lavori
+per \EUR{20} l’ora (lordi).  
+\item \textbf{Computer (\EUR{1400})}: risorse materiali
+necessarie per la gestione degli aspetti commerciali, contabilità, fatturazione
+ed assistenza, si prevede l’acquisto di 2 unità per un costo di \EUR{700} a
+macchina.  
+\item \textbf{Dipendenti (\EUR{4000}/mese)}: risorse umane con competenze
+tecniche atte allo svolgimento delle mansioni necessarie all’attività
+dell’azienda, si prevede un impiego fisso per 8 ore al giorno per un totale di
+\EUR{2000} lordi mensili per dipendente.  
+\end{itemize}
+%
+I costi fissi indiretti sono: 
+\begin{itemize}
+\item \textbf{Affitto immobile (\EUR{1000}/mese)}: locale comprendente un
+magazzino per la giacenza dei prodotti e delle materie materie prime,
+laboratorio di produzione, ufficio e bagno;
+\item \textbf{Energia elettrica (\EUR{70}/mese)}
+\item \textbf{Acqua (\EUR{30}/mese)}
+\item \textbf{Gas (\EUR{100}/mese)}
+\item \textbf{Telefono (\EUR{30}/mese)}
+\end{itemize}
+%
+Le utenze di gas ed energia elettrica sono aggiornate al mese di dicembre 2018,
+come riportato da Federconsumatori in~\cite{feder}.
+
+L’ammontare totale dei costi fissi $\Phi$ è dato dalla somma delle spese mensili
+ricorrenti:
+\begin{displaymath}
+\Phi = (4000 + 1000 + 70 + 30 + 100 + 30) \ \mbox{\euro/mese} = 3230 \ 
+\mbox{\euro/mese}
+\end{displaymath}
+Nel calcolo non sono stati inseriti il costo dei computer e del software in
+quanto non sono spese mensili ma effettuate solo all’inizio dell’attività.
+Saranno ammortizzate nel bilancio annuale secondo le norme vigenti in Italia.
+%
+\subsubsection{Costi variabili}
+I costi variabili sono invece tutti quei costi che variano a seconda della
+domanda e quindi del volume di produzione.
+
+La società dovrà acquistare i sensori per il monitoraggio dell’arnia e le
+componenti per la somministrazione della cura alle api. Inoltre si aggiungono al
+conto le spese di spedizione, in quanto il prodotto viene inviato al cliente che
+provvede da solo all’installazione.\\
+%
+Di seguito i costi per componente elementare:
+\begin{itemize}
+\item \textbf{Arduino: \EUR{35}}
+\item \textbf{Microcamere: \EUR{60}}
+\item \textbf{Fotoresistori: \EUR{1}}
+\item \textbf{Servomotore: \EUR{2}}
+\item \textbf{Resistenza: \EUR{12}}
+\item \textbf{Sensore di temperatura: \EUR{2}}
+\item \textbf{Amplificatore di corrente: \EUR{3}}
+\item \textbf{Colorante: \EUR{13}}
+\item \textbf{Box: \EUR{25}}
+\item \textbf{Spese di trasporto: \EUR{20}} (prezzo medio per spedire in tutta
+Italia un pacco del peso di circa 5 Kg)
+\end{itemize}
+L’ammontare dei costi variabili $\mu$ è
+\begin{displaymath}
+\mu= (35 + 60 + 1 + 2 + 12 + 2 + 3 + 13 + 25 + 20) \ \mbox{\euro} = 173
+\ \mbox{\euro}
+\end{displaymath}
+Il costo finale per la produzione di un singolo prodotto è di $\mu$ = \EUR{173}.
+%%
+%%
+\subsection{Ripartizione dei costi}
+Vengono interpretati come CAPEX tutti i costi relativi a capitali che rimangono
+della proprietà dell’azienda, quindi i costi di sviluppo software e l’affitto
+dei terminali, mentre vengono interpretati come OPEX tutti i costi relativi
+all’affitto degli uffici e alle singole installazioni.
+
+
+
+
+%%
+%%
+\subsection{Fattore di markup e prezzo ottimo}
+Non essendo ancora in possesso di dati sperimentali sulla risposta della domanda
+in funzione del prezzo, si è ipotizzata una relazione funzione di potenza del
+tipo: 
+\begin{displaymath}
+q = \alpha p^{-\beta}
+\end{displaymath}
+dove $\beta$ corrisponde all’elasticità della domanda.\\
+Considerando una reazione significativa del consumatore al variare del prezzo
+dovuta al fatto che si è un’azienda appena nata, il parametro $\beta$ è stato
+fissato ragionevolmente ad un valore pari a 2, per cui si ottiene un fattore di
+markup $MRP=2$, pertanto il valore del prezzo ottimo finale è dato dalla
+seguente formula:
+\begin{displaymath}
+	p^* = MRP \cdot \mu =  2 \cdot 173 \ \mbox{\euro} \ = 346 \ \mbox{\euro}
+\qquad\quad    MRP = \frac{\beta}{\beta-1} = 2
+\end{displaymath}
+%%
+%%
+\subsection{Break even point}
+L’analisi del “punto di pareggio” è stata eseguita per determinare il volume di
+produzione necessario per coprire i costi del prodotto.  Il punto di break-even
+$q^*$ è dato dall’intersezione tra la retta dei costi e quella dei ricavi. 
+
+\setlength\arraycolsep{2pt}
+\begin{displaymath}
+\left\{ \begin{array}{rl}
+c &= \phi + \mu q \\
+r &= q p^* 
+\end{array} \right .
+\end{displaymath}
+%
+\begin{eqnarray*}
+\phi &=& 3230 \cdot 12 = 38.760 \ \mbox{\euro/anno} \qquad \mbox{costi fissi
+annuali} \\
+p^* &=& 346 \ \mbox{\euro/prodotto} \ \qquad\quad\qquad\quad \mbox{prezzo ottimo} \\
+\mu &=& 173 \ \mbox{\euro/prodotto} \ \qquad\quad\qquad\quad \mbox{costo variabile unitario}
+\end{eqnarray*}
+%
+\begin{displaymath}
+q^* = \frac{\phi}{p^* - \mu} = \frac{38.760}{346 - 173} = 224.05
+\end{displaymath}
+Quindi la vendita del duecentoventiquattresimo prodotto ci permetterà di
+arrivare al “punto di pareggio” tra costi e ricavi, mostrato in figura X. Oltre
+tale soglia di vendita si avrà un guadagno positivo.
+
+GRAFICO
+
