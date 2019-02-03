@@ -18,20 +18,22 @@ riferimento: 15/01/2019).\\
 Il valore ottenuto è $r = 4.75\%$\\
 Con tale tasso di sconto è possibile determinare dai flussi di cassa gli indici
 VAN e TIR.
-%
-%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stima della domanda}
 Si ipotizzata una domanda con crescita secondo una curva logistica del tipo: 
 \begin{displaymath}
 q(i) = \frac{1}{1 + \beta_1 e^{-i\beta_2}}
 \end{displaymath}
 
-Il numero di utenti potenziali è stato fissato ad $U=50.236$ (\cite{miele}).
+Il numero di utenti potenziali è stato fissato ad $U=50.236$ \cite{miele}.
 Avendo ipotizzato una crescita con curva logistica, poniamo $q(1)=0.01$ e
 $q(5)=0.05$ come proporzione di utenti interessati alla domanda nel periodo
 interessato dalla nostra analisi.  
 
-Si è ipotizzato ipotizzato inoltre che i clienti dispongano di una struttura che
+Si è ipotizzato inoltre che i clienti dispongano di una struttura che
 racchiude il loro allevamento di api o che, in previsione dell’acquisto del
 nostro prodotto, procedano con l’installazione di una struttura del genere. In
 questo modo ogni cliente può acquistare un singolo prodotto da applicare
@@ -39,9 +41,9 @@ all’ingresso dell’allevamento evitando di acquistarne uno per ogni arnia.
 
 Il numero di clienti che otteniamo anno per anno dalla domanda non è di tipo
 cumulativo, questo perché un cliente che ha acquistato il prodotto non
-è soggetto ad ulteriori spese negli anni successivi. Alla domanda di ogni periodo di
-riferimento si è quindi sottratto i valori della domanda relativa ai periodi
-precedenti, ottenendo il numero dei soli nuovi clienti interessati.
+è soggetto ad ulteriori spese negli anni successivi. Alla domanda di ogni
+periodo di riferimento si è quindi sottratto i valori della domanda relativa ai
+periodi precedenti, ottenendo il numero dei soli nuovi clienti interessati.
 
 In un periodo di riferimento i flussi di cassa sono determinati dai ricavi
 dovuti all’acquisto del prodotto da parte di nuovi clienti, pertanto la
@@ -62,10 +64,11 @@ domanda che c’è tra gli anni $t=1$ e $t=2$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{VAN e TIR}
-I flussi di cassa (guadagno netto - costi ricorrenti) dall’anno $t=0$ a $t=5$ sono
-rappresentati nella tabella~\ref{tab:van} insieme al VAN cumulativo.
-Il VAN è calcolato come 	
+I flussi di cassa (guadagno netto - costi ricorrenti) dall’anno $t=0$ a $t=5$
+sono rappresentati nella tabella~\ref{tab:van} insieme al VAN cumulativo.
+Il VAN è calcolato come
 \begin{displaymath}
 VAN = - C_0 + \sum_{i=1}^n \frac{F_i}{(1 + r)^i}
 \end{displaymath}
@@ -99,6 +102,7 @@ l’intervallo ricercando di volta in volta il valore del VAN nel punto medio,
 si è giunti all’intervallo \mbox{$[8.50, 8.51]$}. Il valore del VAN agli estremi è
 $VAN(r = 8.50) = 651.29 \mbox{\euro}$ e $VAN(r=8.51) = -139.68 \mbox{\euro}$,
 dunque scegliendo il punto intermedio si ottiene $TIR = 8.505\%$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,6 +145,7 @@ Il fattore di rischio con incidenza maggiore è rappresentato dal “fattore
 di markup”. La “domanda” e il “costo dell’hardware” hanno un’incidenza media,
 mentre i “costi relativi all’affitto” e il “tasso di sconto” hanno un’incidenza
 minore.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
