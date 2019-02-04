@@ -42,14 +42,14 @@ hardware e descrive la logica di acquisizione dati, elaborazione ed attuazione
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fasi di sviluppo del progetto}
-\begin{enumerate}
-\item Realizzazione del software\footnote{Operazione Una Tantum}
-\item Inserimento in sede\footnote{Operazione Una Tantum}
-\item Acquisto materie prime
-\item Assemblaggio materie prime e caricamento del software
-\item Vendita e spedizione del prodotto
-\item Assistenza
-\end{enumerate}
+\begin{itemize}
+\item \textbf{Realizzazione del software}: questa fase raggruppa quelli che sono i passaggi necessari per realizzare il prodotto software. In particolare, la progettazione dell'architettura del software e lo sviluppo, il quale viene commissionato a terzi.
+\item \textbf{Inserimento in sede}: fase in cui viene selezionato e affittato l'edificio in cui verranno assemblati i prodotti.
+\item \textbf{Acquisto materie prime}: questa fase ricopre l'acquisto delle componenti hardware.
+\item \textbf{Assemblaggio materie prime e caricamento del software}.
+\item \textbf{Vendita e spedizione del prodotto}.
+\item \textbf{Assistenza}: fase in cui si offre servizio remoto di supporto.
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,7 +124,7 @@ con chiamate illimitate e Internet.
 L’ammontare totale dei costi fissi $\Phi$ è dato dalla somma delle spese mensili
 ricorrenti:
 \begin{displaymath}
-\Phi = (4000 + 1000 + 70 + 30 + 100 + 30) \ \mbox{\euro/mese} = 3230 \ 
+\Phi = (4000 + 1000 + 30 + 10 + 35) \ \mbox{\euro/mese} = 5075 \ 
 \mbox{\euro/mese}
 \end{displaymath}
 Nel calcolo non sono stati inseriti il costo dei computer e del software in
@@ -143,23 +143,23 @@ provvede da solo all’installazione.\\
 Di seguito i costi per componente elementare:
 \begin{itemize}
 \item \textbf{Arduino: \EUR{35}}
-\item \textbf{Microcamere: \EUR{60}}
-\item \textbf{Fotoresistori: \EUR{1}}
-\item \textbf{Servomotore: \EUR{2}}
-\item \textbf{Resistenza: \EUR{12}}
-\item \textbf{Sensore di temperatura: \EUR{2}}
-\item \textbf{Amplificatore di corrente: \EUR{3}}
-\item \textbf{Colorante: \EUR{13}}
-\item \textbf{Box: \EUR{25}}
-\item \textbf{Spese di trasporto: \EUR{20}} (prezzo medio per spedire in tutta
+\item \textbf{Microcamere: \EUR{39.6}}
+\item \textbf{Fotoresistori: \EUR{1.50}}
+\item \textbf{Servomotore: \EUR{3.20}}
+\item \textbf{Resistenza: \EUR{12.00}}
+\item \textbf{Sensore di temperatura: \EUR{2.00}}
+\item \textbf{Amplificatore di corrente: \EUR{3.00}}
+\item \textbf{Colorante: \EUR{13.00}}
+\item \textbf{Box: \EUR{20.00}}
+\item \textbf{Spese di trasporto: \EUR{16}} (prezzo medio per spedire in tutta
 Italia un pacco del peso di circa 5 Kg)
 \end{itemize}
 L’ammontare dei costi variabili $\mu$ è
 \begin{displaymath}
-\mu= (35 + 60 + 1 + 2 + 12 + 2 + 3 + 13 + 25 + 20) \ \mbox{\euro} = 173
+\mu= (35 + 39.6 + 1.5 + 3.2 + 12 + 2 + 3 + 13  + 20 + 16) \ \mbox{\euro} = 145.3
 \ \mbox{\euro}
 \end{displaymath}
-Il costo finale per la produzione di un singolo prodotto è di $\mu$ = \EUR{173}.
+Il costo finale per la produzione di un singolo prodotto è di $\mu$ = \EUR{145.3}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -187,10 +187,7 @@ finanziamento.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prezzo ottimo}
-Dall'analisi dei prodotti della concorrenza emerge che i prezzi proposti variano
-a seconda delle caratteristiche specifiche di cui sono composti.
-
+\subsection{Determinazione del prezzo}
 Non essendo ancora in possesso di dati sperimentali sulla risposta della domanda
 in funzione del prezzo, si è ipotizzata una relazione funzione di potenza del
 tipo: 
@@ -199,14 +196,9 @@ q = \alpha p^{-\beta}
 \end{displaymath}
 dove $\beta$ corrisponde all’elasticità della domanda.\\
 Considerando una reazione significativa del consumatore al variare del prezzo
-dovuta al fatto che si è un’azienda appena nata, il parametro $\beta$ è stato
-fissato ragionevolmente ad un valore pari a 2, per cui si ottiene un fattore di
-markup $MRP=2$, pertanto il valore del prezzo ottimo finale è dato dalla
-seguente relazione:
-\begin{displaymath}
-	p^* = MRP \cdot \mu =  2 \cdot 173 \ \mbox{\euro} \ = 346 \ \mbox{\euro}
-\qquad\quad    MRP = \frac{\beta}{\beta-1} = 2
-\end{displaymath}
+dovuta al fatto che si è un’azienda appena nata, si è supposto di avere una domanda elastica ($\beta > 1$), quindi il prezzo ottimo sarebbe idealmente il prezzo più basso possibile relativamente a quello imposto dalla concorrenza.\\
+Il prezzo finale è stato determinato tenendo in considerazione i prezzi dei prodotti più simili a \textit{BeeCareful} in termini di componenti hardware, che identificano la fascia di prezzo compresa tra i \EUR{300} e i \EUR{500}, differenziandosi dai prodotti molto più costosi che permettono la raccolta dati e l’accesso remoto agli stessi.\\
+Per poter essere competitivi in un mercato così frammentato, abbiamo deciso di fissare il prezzo di vendita a \EUR{350}, leggermente al di sopra del prezzo ottimo poiché offriamo una soluzione ad un problema che non viene risolto dalla concorrenza.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
