@@ -1,55 +1,68 @@
 \section{Analisi degli investimenti}
-\subsection{Tasso di sconto}
-Il tasso di sconto è stato calcolato utilizzando il modello CAPM - Capital Asset
-Pricing Model, secondo cui il tasso di sconto è definito come
+\subsection{Modello WACC}
+Per determinare il "tasso di sconto" abbiamo deciso di utilizzare il modello "WACC - Weighted Average Cost of Capital", per poter tenere in considerazione sia il costo del capitale di debito che del capitale proprio. \newline
+Il WACC è definito come
+\begin{displaymath}
+WACC = K_D \frac{D}{D+E} + K_E \frac{E}{D+E}
+\end{displaymath}
+\begin{eqnarray*}
+K_D &:=& \mbox{costo del debito al netto della fiscalità} \\ 
+K_E &:=& \mbox{costo del capitale proprio} \\
+D  &:=& \mbox{valore del debito gravato da interessi}\\
+E &:=& \mbox{valore del patrimonio netto}
+\end{eqnarray*}
+
+Per il nostro prodotto abbiamo ipotizzato di avere un investimento iniziale di \euro 80000 di cui il 60\% è rappresentato da capitale proprio e il restante 40\% dal capitale di debito ottenuto attraverso un finanziamento da terzi. Quindi abbiamo scelto come pesi per il modello WACC $\frac{E}{D+E}=60\%$ e $\frac{E}{D+E} = 40\%$.
+
+Il costo del capitale proprio è stato calcolato utilizzando il modello "CAPM - Capital Asset Pricing Model" definito come:
 \begin{displaymath}
 r = r_f + \beta (r_m - r_f )
 \end{displaymath}
 \begin{eqnarray*}
-r_f &=& 0.0357 \qquad \mbox{tasso di rendimento di un titolo privo di rischi} \\ 
-\beta &=& 1,24 \quad\qquad \mbox{fattore di rischio} \\
-r_m &=& 0.0452 \qquad \mbox{tasso di rendimento medio del mercato}
+	r_f &:=& \mbox{tasso di rendimento di un titolo privo di rischi} \\ 
+	\beta &:=& \mbox{fattore di rischio} \\
+	r_m &:=& \mbox{tasso di rendimento medio del mercato}
 \end{eqnarray*}
 
-Da un’analisi del mercato italiano tecnologico abbiamo trovato come valori
-$\beta=1,24$ e $r_m=4.52\%$. Come titolo risk-free è stato scelto il BTP
-(\cite{finmer}), il cui tasso di rendimento a 5 anni è $r_f=3.57\%$ (data di
+Da un’analisi del mercato tecnologico abbiamo trovato come valori
+$\beta=1,13$ e $r_m=9.7\%$. Come titolo risk-free è stato scelto il BTP
+(\cite{finmer}), il cui tasso di rendimento a 5 anni è $r_f=1.54\%$ (data di
 riferimento: 15/01/2019).\\ 
-Il valore ottenuto è $r = 4.75\%$\\
-Con tale tasso di sconto è possibile determinare dai flussi di cassa gli indici
-VAN e TIR.
+Il valore ottenuto è $r = 10.76\%$\\
+
+Dunque abbiamo definito il costo del capitale proprio come $ke = 10.76\%$\\
+Il WACC ottenuto è pari al $9.06\%$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stima della domanda}
-Si ipotizzata una domanda con crescita secondo una curva logistica del tipo: 
+\subsection{Analisi della domanda}
+Abbiamo ipotizzato una domanda con crescita secondo una curva logistica. 
 \begin{displaymath}
 q(i) = \frac{1}{1 + \beta_1 e^{-i\beta_2}}
 \end{displaymath}
 
 Il numero di utenti potenziali è stato fissato ad $U=50.236$ \cite{miele}.
-Avendo ipotizzato una crescita con curva logistica, poniamo $q(1)=0.01$ e
-$q(5)=0.05$ come proporzione di utenti interessati alla domanda nel periodo
+Avendo ipotizzato una crescita con curva logistica, poniamo $q(1)=1\%$ e
+$q(5)=5\%$ come proporzione di utenti interessati alla domanda nel periodo
 interessato dalla nostra analisi.  
 
 Si è ipotizzato inoltre che i clienti dispongano di una struttura che
-racchiude il loro allevamento di api o che, in previsione dell’acquisto del
+racchiuda il loro allevamento di api o che, in previsione dell’acquisto del
 nostro prodotto, procedano con l’installazione di una struttura del genere. In
 questo modo ogni cliente può acquistare un singolo prodotto da applicare
 all’ingresso dell’allevamento evitando di acquistarne uno per ogni arnia.
 
 Il numero di clienti che otteniamo anno per anno dalla domanda non è di tipo
 cumulativo, questo perché un cliente che ha acquistato il prodotto non
-è soggetto ad ulteriori spese negli anni successivi. Alla domanda di ogni
-periodo di riferimento si è quindi sottratto i valori della domanda relativa ai
-periodi precedenti, ottenendo il numero dei soli nuovi clienti interessati.
-
+avrà necessità di acquistarne altri. Alla domanda di ogni
+periodo di riferimento abbiamo quindi sottratto i valori della domanda relativa ai
+periodi precedenti, ottenendo il numero dei soli nuovi clienti interessati.\\
+Questo spiega il calo di domanda che si verifica tra gli anni $t=1$ e $t=2$.
 In un periodo di riferimento i flussi di cassa sono determinati dai ricavi
 dovuti all’acquisto del prodotto da parte di nuovi clienti, pertanto la
 proporzione di utenti che contribuiscono a tale calcolo viene calcolata come
-$q(i) - q(i-1)$ per il periodo $i$ di riferimento. Questo spiega il calo di
-domanda che c’è tra gli anni $t=1$ e $t=2$.
+$q(i) - q(i-1)$ per il periodo $i$ di riferimento.
 
 % tabella dcf
 \input{tables/dcf}
@@ -66,6 +79,7 @@ domanda che c’è tra gli anni $t=1$ e $t=2$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{VAN e TIR}
+Abbiamo ipotizzato di effettuare un investimento iniziale $C_0 = 80.000$ e ne teniamo conto nel VAN calcolato a $t=0$.
 I flussi di cassa (guadagno netto - costi ricorrenti) dall’anno $t=0$ a $t=5$
 sono rappresentati nella tabella~\ref{tab:van} insieme al VAN cumulativo.
 Il VAN è calcolato come
@@ -73,8 +87,8 @@ Il VAN è calcolato come
 VAN = - C_0 + \sum_{i=1}^n \frac{F_i}{(1 + r)^i}
 \end{displaymath}
 \begin{eqnarray*}
-C_0 &=& 80000 \ \mbox{\euro} \qquad \mbox{investimento iniziale} \\
-r &=& 0.0475 \qquad \mbox{tasso di sconto} \\
+C_0 &:=& \mbox{investimento iniziale} \\
+r &:=& \mbox{tasso di sconto} \\
 n &:=& \mbox{numero di periodi analizzati} \\
 F_i &:=& \mbox{flusso di cassa relativo al periodo i}
 \end{eqnarray*}
@@ -88,20 +102,25 @@ F_i &:=& \mbox{flusso di cassa relativo al periodo i}
 \label{van}
 \end{figure}
 %
+
+Otteniamo VAN = 65687.06 nell'anno $t=5$. All'anno $t=2$ si può osservare una diminuzione del VAN rispetto all'anno precedente. Questa è imputabile alla diminuzione del numero di clienti rispetto all'anno $t=1$. Infatti, come detto in precedenza, il numero di clienti non è una funzione cumulativa.\\
 Il periodo di pareggio finanziario (“payback period”) è dunque raggiunto tra il
 quarto ed il quinto anno. Essendo un indice che può essere interpretato come
 grado di rischio associato al progetto, ci si può ritenere soddisfatti di poter
 mostrare che entro il quinto anno di esercizio la nostra azienda può raggiungere
-il pareggio e ottenere un VAN positivo. L'andamento del VAN durante i primi 5
-anni è mostrato in figura~\ref{van}.
+il pareggio e ottenere un VAN positivo.
 
 Il TIR è il tasso di attualizzazione per cui il VAN del progetto è pari a zero, 
 ed è usato per misurare la redditività di progetti e investimenti.
 Studiando il valore del VAN al variare del tasso di sconto, e riducendo
 l’intervallo ricercando di volta in volta il valore del VAN nel punto medio,
-si è giunti all’intervallo \mbox{$[8.50, 8.51]$}. Il valore del VAN agli estremi è
-$VAN(r = 8.50) = 651.29 \mbox{\euro}$ e $VAN(r=8.51) = -139.68 \mbox{\euro}$,
-dunque scegliendo il punto intermedio si ottiene $TIR = 8.505\%$.
+si è giunti all’intervallo \mbox{$[0.285, 0.286]$}. Il valore del VAN agli estremi è
+$VAN(r = 28.5\%) = 407.86 \mbox{\euro}$ e $VAN(r=28.6) = -570.56 \mbox{\euro}$,
+dunque scegliendo il punto intermedio abbiamo definito come valore il $TIR = 28.55\%$.
+
+Dai risultati ottenuti possiamo notare che il progetto è potenzialmente positivo visto l'esito dei flussi di cassa.Il calcolo del VAN prevede che entro il quinto anno di attività si dovrebbe raggiungere il pareggio finanziario, coprendo dunque l’investimento iniziale e le spese dei primi anni di attività e raggiungendo una situazione di attivo tra costi e ricavi.
+Inoltre dal confronto tra WACC e TIR possiamo dedurre se è conveniente investire o meno nel nostro progetto. Poiché $TIR = 28.55 \% > 9.06\% = WACC$ possiamo concludere che è conveniente.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -149,25 +168,3 @@ minore.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modello WACC}
-Per analizzare le fonti di finanziamento del nostro prodotto è stato utilizzato
-il Modello WACC - Weighted Average Cost of Capital, il quale restituisce il
-costo medio ponderato del capitale.
-\begin{displaymath}
-WACC = k_D \frac{D}{D+E} + k_E \frac{E}{D+E}
-\end{displaymath}
-\begin{eqnarray*}
-k_D &=& 0.0475 \quad \mbox{costo del debito al netto della fiscalità} \\
-k_E &=& 0.0650 \quad \mbox{costo del capitale proprio. E’ il tasso di sconto “r”} \\
-D &=& 0.5 \quad \mbox{valore del debito gravato da interessi} \\
-E &=& 0.5 \quad \mbox{valore del patrimonio netto} 
-\end{eqnarray*}
-Si è ipotizzato di avere il 50\% delle fonti di finanziamento rappresentati da
-capitale proprio, e il restante 50\% da un finanziamento. Quindi $\frac{D}{D+E} 
-= \frac{E}{D+E} = 0.5$.  $k_E$ come già calcolato è pari a 4.75\%, mentre per il
-costo del debito visto l’elevato rischio di una azienda “neonata” al primo anno
-di attività si è imposto $k_D = 6.5\%$. 
-
-Si ottiene un WACC = 0.056 e dal confronto con il TIR si può valutare se è
-conveniente investire o meno nel nostro progetto. Poiché $TIR = 0.08505 > 0.056$
-si può concludere che è conveniente.
