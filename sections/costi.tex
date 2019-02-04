@@ -70,7 +70,7 @@ energia e costi generali.\\
 %
 Sono stati individuati i seguenti costi fissi diretti:
 \begin{itemize}
-\item \textbf{Programmatori (\EUR{3200})}: risorse umane necessarie alla
+\item \textbf{Programmatori (\EUR{4000})}: risorse umane necessarie alla
 realizzazione del software.  Le funzionalità del software riguardano
 principalmente acquisizione dei dati, l’elaborazione, ed il controllo dei
 dispositivi connessi alla scheda Arduino.  Per quanto riguarda l’acquisizione
@@ -80,32 +80,46 @@ si può considerare soltanto il costo di adattamento della libreria. Anche per
 quanto riguarda le funzioni di controllo e attuazione, vi è un elevato grado di
 supporto in casa Arduino, pertanto si stima un tempo necessario per
 l’implementazione ed il test dell’ordine delle settimane, non più di 4, pari a
-160 ore di lavoro. Si può concludere che il costo totale sia al più di
-\EUR{3200} per un impiego su commissione, supponendo che un programmatore lavori
-per \EUR{20} l’ora (lordi).  
-\item \textbf{Computer (\EUR{1400})}: risorse materiali
+160 ore di lavoro. La retribuzione media per uno sviluppatore software in Italia
+è stimata intorno ai 25 \euro lordi (Job Pricing~\cite{corcom}), si può
+concludere, quindi che il costo totale sia al più di \EUR{4000} per un impiego
+su commissione. 
+\item \textbf{Computer (\EUR{1080})}: risorse materiali
 necessarie per la gestione degli aspetti commerciali, contabilità, fatturazione
-ed assistenza, si prevede l’acquisto di 2 unità per un costo di \EUR{700} a
-macchina.  
+ed assistenza, si prevede l’acquisto di 2 unità workstation per un costo di
+\EUR{540} a macchina (Dell OptiPlex 3060 più monitor \cite{dell}).  
 \item \textbf{Dipendenti (\EUR{4000}/mese)}: risorse umane con competenze
 tecniche atte allo svolgimento delle mansioni necessarie all’attività
 dell’azienda, si prevede un impiego fisso per 8 ore al giorno per un totale di
-\EUR{2000} lordi mensili per dipendente.  
+\EUR{2000} lordi mensili per dipendente, in accordo con la stima relativa alle
+retribuzioni medie di un impiegato in Italia secondo Job Pricing \cite{money}.
 \end{itemize}
 %
 I costi fissi indiretti sono: 
 \begin{itemize}
-\item \textbf{Affitto immobile (\EUR{1000}/mese)}: locale comprendente un
-magazzino per la giacenza dei prodotti e delle materie materie prime,
-laboratorio di produzione, ufficio e bagno;
-\item \textbf{Energia elettrica (\EUR{70}/mese)}
-\item \textbf{Acqua (\EUR{30}/mese)}
-\item \textbf{Gas (\EUR{100}/mese)}
-\item \textbf{Telefono (\EUR{30}/mese)}
+\item \textbf{Affitto immobile (\EUR{1000}/mese)}: locale di $100 m^2$
+comprendente un magazzino per la giacenza dei prodotti e delle materie materie
+prime, laboratorio di produzione, ufficio e bagno;
+\item \textbf{Energia elettrica (\EUR{30}/mese)}: il consumo di energia è
+legato all’illuminazione, all’utilizzo dei pc e al riscaldamento. Tramite
+l’impiego di uno strumento online~\cite{lucegas} se ne è stimato il consumo
+medio. Supponendo di avere un contatore di 3kW (visto i pochi dispositivi
+elettrici presenti e il basso numero di personale) e che l’immobile sia fornito
+di una caldaia a condensazione, la stima risultante equivale a circa 1800
+kWh/anno, cioè 150 kWh/mese. Per il primo trimestre del 2019 Il prezzo del kWh è
+di 0.2\euro/kWh~\cite{segugio} (comprendente materia prima, spese e tasse);
+
+\item \textbf{Acqua (\EUR{10}/mese)}  è utilizzata solo per il bagno. Poiché una
+famiglia italiana consuma mediamente $200 m^3$ di acqua all’anno \cite{acqua},
+di cui la maggior parte è legata ad usi non-alimentari, sembra ragionevole
+stimare di avere un consumo medio non superiore a $80 m^3$ di acqua all’anno,
+per un costo mensile di \EUR{10} al mese (\EUR{1.37} per $m^3$ \cite{acquacub});
+
+\item \textbf{Telefono (\EUR{35}/mese)} Costo per un abbonamento flat \cite{tim}
+con chiamate illimitate e Internet.
+
 \end{itemize}
 %
-Le utenze di gas ed energia elettrica sono aggiornate al mese di dicembre 2018,
-come riportato da Federconsumatori in~\cite{feder}.
 
 L’ammontare totale dei costi fissi $\Phi$ è dato dalla somma delle spese mensili
 ricorrenti:
